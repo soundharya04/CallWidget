@@ -1,0 +1,70 @@
+.call_widget {
+  background: linear-gradient(rgb(30, 182, 228), rgb(10, 58, 73));
+  border-radius: 50px;
+  position: fixed;
+  z-index: 10;
+  bottom: 30px;
+  right: 10px;
+  width: 300px;
+  height: 75px;
+  color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cw_disp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  width: 250px;
+  height: 75px;
+  border-radius: 2px;
+  padding-bottom: 10px;
+}
+
+.cw_disp h3 {
+  align-self: center;
+  background-color: white;
+  color: rgb(30, 182, 228);
+  border-radius: 50px;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+}
+
+.cw_disp span {
+  align-self: center;
+  background: linear-gradient(rgb(30, 182, 228), rgb(10, 58, 73));
+  color: white;
+  border-radius: 50px;
+  width: 75%;
+  height: 50px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cw_ctrl {
+  align-self: flex-start;
+  padding-top: 5px;
+}
+
+.cwclose {
+  cursor: pointer;
+  position: relative;
+  font-size: small;
+  color: rgb(30, 182, 228);
+  right: 2px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #f2f5fa;
+  border: none;
+  border-radius: 50%;
+}
+
+.cwclose:focus {
+  outline: none;
+}
