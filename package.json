@@ -1,5 +1,5 @@
 {
-  "name": "loginimplementation",
+  "name": "callwidget",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prebuild:single": "npm run build",
+    "build:single": "npx gulp"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +39,9 @@
     ]
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-inline-source": "^4.0.0",
+    "gulp-replace": "^1.0.0",
     "json-loader": "^0.5.7"
   }
 }

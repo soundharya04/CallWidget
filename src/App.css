@@ -68,3 +68,7 @@
 .cwclose:focus {
   outline: none;
 }
+
+.callbtn {
+  cursor: pointer;
+}
