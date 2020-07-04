@@ -17,11 +17,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run build:react && npm run build:bundle",
+    "build:react": "react-scripts build",
+    "build:bundle": "webpack --config webpack.config.js",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prebuild:single": "npm run build",
-    "build:single": "npx gulp"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,9 +39,8 @@
     ]
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-inline-source": "^4.0.0",
-    "gulp-replace": "^1.0.0",
-    "json-loader": "^0.5.7"
+    "json-loader": "^0.5.7",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack-cli": "^3.3.12"
   }
 }
