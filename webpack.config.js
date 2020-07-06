@@ -1,23 +1,30 @@
 const path = require("path");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const glob = require("glob");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: {
-    "bundle.js": glob
-      .sync("build/static/?(js|css)/main.*.?(js|css)")
-      .map((f) => path.resolve(__dirname, f)),
-  },
+  entry: path.resolve(__dirname, "./src/index.js"),
   output: {
-    filename: "build/static/js/bundle.min.js",
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
     ],
   },
-  plugins: [new UglifyJsPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "./public/index.html"),
+    }),
+  ],
 };
